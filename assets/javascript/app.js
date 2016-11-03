@@ -224,9 +224,27 @@
 		$(".popupDiv").html(
 			"Correct: " + correctNumber + "<br>" +
 			"Incorrect: " + incorrectNumber + "<br>" +
-			"Unanswered: " + unansweredNumber);		
+			"Unanswered: " + unansweredNumber + 
+			"<button class='restart'> restart </button>");
+
 		$(".popupDiv").css("display","block");
 	}
+
+
+
+	/* restart button */
+	$(".popupDiv").on("click","button",function(){
+		correctNumber = 0;
+		incorrectNumber = 0;
+		unansweredNumber = 0;
+		setNumber = 1;
+		counterNumber = 99999999;
+
+		$(".choicesDiv").css("display","block");
+		$(".popupDiv").css("display","none");
+
+		selectSet();
+	})
 
 
 /* stuff for the timer */
